@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "posts"
+    label: "Insights & Posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Post Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Case Law", value: "caselaw" }
+          - { label: "Blog Post", value: "blog" }
+          - { label: "Firm Update", value: "update" }
+      - { label: "Date", name: "date", widget: "datetime", format: "MMMM YYYY", date_format: "MMMM YYYY", time_format: false }
+      - { label: "Blurb", name: "blurb", widget: "text", hint: "Short summary shown on the homepage card (2-4 sentences)" }
+      - { label: "Full Content", name: "body", widget: "markdown", required: false, hint: "Optional full article content" }

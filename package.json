@@ -1,0 +1,8 @@
+{
+  "name": "marger-law-firm",
+  "version": "1.0.0",
+  "description": "Marger Law Firm, P.A. website",
+  "scripts": {
+    "build": "node build.js"
+  }
+}

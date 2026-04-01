@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marger Law Firm, P.A. — Florida Family Law</title>
+  <meta name="description" content="Marger Law Firm, P.A. provides experienced family law representation in Florida including divorce, paternity, prenuptial agreements, and enforcement." />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF8F4;
+      --white: #ffffff;
+      --warm-dark: #2C2B28;
+      --accent: #8B6B4A;
+      --accent-light: #F0E8DC;
+      --muted: #6B6660;
+      --border: rgba(0,0,0,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--warm-dark); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream); border-bottom: 0.5px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; color: var(--warm-dark); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { font-size: 13px; font-family: 'Source Sans 3', sans-serif; font-weight: 600; background: var(--accent); color: #FAF8F4; border: none; border-radius: 4px; padding: 8px 18px; cursor: pointer; text-decoration: none; letter-spacing: 0.03em; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.85; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--warm-dark); display: block; }
+    .mobile-menu { display: none; flex-direction: column; background: var(--cream); border-bottom: 0.5px solid var(--border); padding: 1rem 2rem 1.5rem; gap: 1rem; }
+    .mobile-menu a { font-size: 15px; color: var(--muted); text-decoration: none; }
+    .mobile-menu.open { display: flex; }
+
+    /* ── BUTTONS ── */
+    .btn-primary { display: inline-block; background: var(--accent); color: #FAF8F4; border: none; border-radius: 4px; padding: 12px 22px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.02em; transition: opacity 0.2s; text-decoration: none; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline { display: inline-block; background: transparent; color: var(--warm-dark); border: 0.5px solid var(--border); border-radius: 4px; padding: 12px 22px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.02em; transition: background 0.2s; text-decoration: none; }
+    .btn-outline:hover { background: var(--accent-light); }
+
+    /* ── SECTION HELPERS ── */
+    .section-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; text-align: center; }
+    .section-heading { font-family: 'Lora', serif; font-size: 28px; font-weight: 400; text-align: center; margin-bottom: 0.75rem; }
+    .section-sub { font-size: 15px; color: var(--muted); text-align: center; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300; }
+
+    /* ── HERO ── */
+    .hero { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .hero-eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .hero-heading { font-family: 'Lora', serif; font-size: 38px; font-weight: 400; line-height: 1.25; margin-bottom: 1.25rem; }
+    .hero-heading em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-img-box { background: var(--accent-light); border-radius: 8px; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-img-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+    .hero-img-placeholder { font-family: 'Lora', serif; font-size: 13px; color: var(--accent); font-style: italic; opacity: 0.7; text-align: center; padding: 1rem; }
+
+    /* ── PRACTICES ── */
+    .practices { background: var(--white); padding: 4rem 2rem; }
+    .practices-inner { max-width: 860px; margin: 0 auto; }
+    .practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .practice-card { background: var(--cream); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.75rem 1.5rem; transition: border-color 0.2s; }
+    .practice-card:hover { border-color: var(--accent); }
+    .practice-icon { width: 40px; height: 40px; background: var(--accent-light); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .practice-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .practice-name { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; margin-bottom: 0.5rem; }
+    .practice-desc { font-size: 14px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+    .practice-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+    .practice-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; padding: 3px 10px; border-radius: 3px; background: var(--accent-light); color: var(--accent); }
+
+    /* ── ABOUT ── */
+    .about { padding: 4rem 2rem; }
+    .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-img { background: var(--accent-light); border-radius: 8px; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+    .about-img-placeholder { font-family: 'Lora', serif; font-size: 13px; color: var(--accent); font-style: italic; opacity: 0.7; }
+    .about-text .section-label, .about-text .section-heading { text-align: left; }
+    .about-body { font-size: 15px; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 1.5rem; }
+    .trust-items { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .trust-badge { background: var(--accent-light); border-radius: 4px; padding: 6px 14px; font-size: 13px; color: var(--accent); font-weight: 600; }
+
+    /* ── INSIGHTS ── */
+    .insights { background: var(--white); padding: 4rem 2rem; }
+    .insights-inner { max-width: 860px; margin: 0 auto; }
+    .insights-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .insights-header .section-label, .insights-header .section-heading { text-align: left; }
+    .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .insight-card { background: var(--cream); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s; }
+    .insight-card:hover { border-color: var(--accent); }
+    .insight-type { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; width: fit-content; }
+    .type-caselaw { background: #EAF3DE; color: #3B6D11; }
+    .type-blog { background: #E6F1FB; color: #185FA5; }
+    .type-update { background: #FAEEDA; color: #854F0B; }
+    .insight-title { font-family: 'Lora', serif; font-size: 15px; font-weight: 500; line-height: 1.4; }
+    .insight-blurb { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 300; flex: 1; }
+    .insight-date { font-size: 12px; color: var(--muted); opacity: 0.7; }
+    .insights-loading { text-align: center; color: var(--muted); font-size: 14px; padding: 2rem; grid-column: 1/-1; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 4rem 2rem; }
+    .contact-inner { max-width: 680px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 12px; }
+    .contact-item-icon { width: 36px; height: 36px; background: var(--accent-light); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-item-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .contact-item-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 2px; }
+    .contact-item-val { font-size: 14px; color: var(--warm-dark); }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .contact-form input, .contact-form textarea, .contact-form select { font-family: 'Source Sans 3', sans-serif; background: var(--white); border: 0.5px solid var(--border); border-radius: 4px; padding: 10px 14px; font-size: 14px; color: var(--warm-dark); outline: none; width: 100%; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent); }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .contact-form .btn-primary { width: 100%; text-align: center; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--warm-dark); color: rgba(250,248,244,0.6); padding: 2rem; text-align: center; font-size: 13px; line-height: 1.8; }
+    footer strong { color: rgba(250,248,244,0.9); font-weight: 500; }
+    footer a { color: rgba(250,248,244,0.5); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.25rem; }
+      .hero-img-box { height: 200px; }
+      .hero-heading { font-size: 28px; }
+      .practice-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-img { height: 200px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .insights-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1.25rem; }
+      .practices, .about, .contact, .insights { padding: 3rem 1.25rem; }
+      .insights-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Marger Law Firm, P.A.</a>
+  <ul class="nav-links">
+    <li><a href="#practices">Practice Areas</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Consultation</a>
+  <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="#practices" onclick="this.parentElement.classList.remove('open')">Practice Areas</a>
+  <a href="#insights" onclick="this.parentElement.classList.remove('open')">Insights</a>
+  <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  <a href="#contact" class="btn-primary" style="width:fit-content;margin-top:0.5rem" onclick="this.parentElement.classList.remove('open')">Free Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Florida Family Law</p>
+    <h1 class="hero-heading">Compassionate counsel for <em>Florida families</em></h1>
+    <p class="hero-sub">Experienced legal representation in divorce, paternity, agreements, and enforcement — guiding you through life's most important moments with clarity and care.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Schedule a Consultation</a>
+      <a href="#practices" class="btn-outline">Our Practice Areas</a>
+    </div>
+  </div>
+  <div class="hero-img-box">
+    <!-- Replace with: <img src="images/hero.jpg" alt="Marger Law Firm" /> -->
+    <p class="hero-img-placeholder">Add your photo here<br><small style="font-size:11px;opacity:0.6;">Replace the comment in index.html</small></p>
+  </div>
+</section>
+
+<!-- PRACTICES -->
+<section class="practices" id="practices">
+  <div class="practices-inner">
+    <p class="section-label">Practice Areas</p>
+    <h2 class="section-heading">Family law, handled with care</h2>
+    <p class="section-sub">We focus exclusively on family law so we can give your matter the depth and attention it deserves.</p>
+    <div class="practice-grid">
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="practice-name">Divorce</p>
+        <p class="practice-desc">Whether contested or uncontested, we guide you through the process of dissolving a marriage — protecting your assets, your rights, and your future.</p>
+        <div class="practice-tags">
+          <span class="practice-tag">Contested</span>
+          <span class="practice-tag">Uncontested</span>
+          <span class="practice-tag">Asset division</span>
+          <span class="practice-tag">Alimony</span>
+        </div>
+      </div>
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p class="practice-name">Paternity</p>
+        <p class="practice-desc">Establishing or contesting paternity affects child support, custody, and parental rights. We help both mothers and fathers navigate these sensitive cases.</p>
+        <div class="practice-tags">
+          <span class="practice-tag">Establishment</span>
+          <span class="practice-tag">Custody</span>
+          <span class="practice-tag">Child support</span>
+          <span class="practice-tag">Parental rights</span>
+        </div>
+      </div>
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <p class="practice-name">Pre/Postnuptial Agreements</p>
+        <p class="practice-desc">Well-drafted agreements protect both parties. We draft and review prenuptial and postnuptial agreements that are fair, thorough, and enforceable under Florida law.</p>
+        <div class="practice-tags">
+          <span class="practice-tag">Prenuptial</span>
+          <span class="practice-tag">Postnuptial</span>
+          <span class="practice-tag">Asset protection</span>
+        </div>
+      </div>
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="practice-name">Enforcement</p>
+        <p class="practice-desc">When court orders are ignored, we act. We pursue enforcement of support orders, custody agreements, and other family law judgments to protect your rights.</p>
+        <div class="practice-tags">
+          <span class="practice-tag">Support enforcement</span>
+          <span class="practice-tag">Custody orders</span>
+          <span class="practice-tag">Contempt motions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="insights" id="insights">
+  <div class="insights-inner">
+    <div class="insights-header">
+      <div>
+        <p class="section-label">Insights</p>
+        <h2 class="section-heading">Case law &amp; firm updates</h2>
+      </div>
+      <a href="/admin/" class="btn-primary">+ Add post</a>
+    </div>
+    <div class="insights-grid" id="insights-grid">
+      <p class="insights-loading">Loading posts…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img">
+      <!-- Replace with: <img src="images/attorney.jpg" alt="Attorney" /> -->
+      <p class="about-img-placeholder">Attorney photo here</p>
+    </div>
+    <div class="about-text">
+      <p class="section-label">About the Firm</p>
+      <h2 class="section-heading">Personal attention. Real results.</h2>
+      <p class="about-body">At Marger Law Firm, P.A., we believe every client deserves clear advice and a dedicated advocate. We take time to understand your situation and work tirelessly to protect your rights and interests.</p>
+      <p class="about-body">Based in Florida and focused exclusively on family law, we bring depth of knowledge and personal attention to every matter we handle.</p>
+      <div class="trust-items">
+        <span class="trust-badge">Licensed in Florida</span>
+        <span class="trust-badge">Free consultations</span>
+        <span class="trust-badge">Family law focus</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-heading">Schedule a free consultation</h2>
+    <p class="section-sub">Tell us about your situation and we'll be in touch shortly.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <p class="contact-item-label">Phone</p>
+            <!-- UPDATE THIS -->
+            <p class="contact-item-val">(555) 000-0000</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <p class="contact-item-label">Email</p>
+            <!-- UPDATE THIS -->
+            <p class="contact-item-val">info@margerlaw.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="contact-item-label">Location</p>
+            <!-- UPDATE THIS -->
+            <p class="contact-item-val">Florida</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <!-- For working form submissions, sign up at https://formspree.io and replace ACTION_URL below -->
+        <form action="https://formspree.io/f/ACTION_URL" method="POST">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email address" required />
+            <input type="tel" name="phone" placeholder="Phone number" />
+            <select name="practice_area" required>
+              <option value="" disabled selected>Practice area</option>
+              <option>Divorce</option>
+              <option>Paternity</option>
+              <option>Pre/Postnuptial Agreements</option>
+              <option>Enforcement</option>
+              <option>Other</option>
+            </select>
+            <textarea name="message" placeholder="Briefly describe your situation..." required></textarea>
+            <button type="submit" class="btn-primary" style="width:100%;text-align:center;">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Marger Law Firm, P.A.</strong><br>
+  &copy; 2026 &middot; Florida &middot; <a href="/privacy.html">Privacy Policy</a><br>
+  <span style="font-size:12px;opacity:0.5;margin-top:6px;display:block;">This website is for informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by submitting this form.</span>
+</footer>
+
+<script>
+  // Netlify Identity redirect for CMS
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+
+  // Load posts from /posts/ directory via Netlify's file listing
+  async function loadPosts() {
+    const grid = document.getElementById('insights-grid');
+    const typeLabels = { caselaw: 'Case law', blog: 'Blog', update: 'Update' };
+    const typeClasses = { caselaw: 'type-caselaw', blog: 'type-blog', update: 'type-update' };
+
+    try {
+      // Fetch the post index generated at build time
+      const res = await fetch('/posts/index.json');
+      if (!res.ok) throw new Error('no index');
+      const posts = await res.json();
+
+      if (!posts.length) {
+        grid.innerHTML = '<p class="insights-loading">No posts yet. <a href="/admin/" style="color:var(--accent)">Add your first post →</a></p>';
+        return;
+      }
+
+      grid.innerHTML = posts.map(post => `
+        <div class="insight-card">
+          <span class="insight-type ${typeClasses[post.type] || 'type-blog'}">${typeLabels[post.type] || 'Post'}</span>
+          <p class="insight-title">${post.title}</p>
+          <p class="insight-blurb">${post.blurb}</p>
+          <p class="insight-date">${post.date}</p>
+        </div>
+      `).join('');
+    } catch {
+      // Fallback: show static sample cards if index.json not yet built
+      grid.innerHTML = `
+        <div class="insight-card">
+          <span class="insight-type type-caselaw">Case law</span>
+          <p class="insight-title">Florida Supreme Court clarifies parental relocation standard</p>
+          <p class="insight-blurb">The court reinforced that a parent seeking to relocate must demonstrate the move is in the child's best interest, not merely the parent's convenience.</p>
+          <p class="insight-date">March 2026</p>
+        </div>
+        <div class="insight-card">
+          <span class="insight-type type-blog">Blog</span>
+          <p class="insight-title">What to expect in a Florida paternity case</p>
+          <p class="insight-blurb">A practical overview of the paternity establishment process in Florida — from filing the petition to the final order, and what it means for both parents.</p>
+          <p class="insight-date">February 2026</p>
+        </div>
+        <div class="insight-card">
+          <span class="insight-type type-update">Update</span>
+          <p class="insight-title">2026 child support guideline updates in Florida</p>
+          <p class="insight-blurb">Florida's updated income shares model took effect this year. Here's what the changes mean for existing orders and new cases.</p>
+          <p class="insight-date">January 2026</p>
+        </div>
+      `;
+    }
+  }
+
+  loadPosts();
+</script>
+</body>
+</html>
