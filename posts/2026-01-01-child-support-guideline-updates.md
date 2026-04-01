@@ -1,12 +1,16 @@
 ---
-title: 2026 child support guideline updates in Florida
-type: update
-date: January 2026
-blurb: Florida's updated income shares model took effect this year. Here's what the changes mean for existing orders and new cases filed in 2026.
+title: "The Algorithm Doesn’t Know Best: AI in Family Law"
+type: caselaw
+date: April 2026
+blurb: >
+  Hessert v. Hessert and Wieland-Pulayya, 6D26-0121, March 20, 2026 – Thirteen
+  citations: four accurate, four irrelevant, five imaginary. The opinion
+  underscores generative AI’s pitfalls, prompting the Sixth DCA to order the
+  petitioner to show cause why sanctions should not follow.
+
+
+  https://flcourts-media.flcourts.gov/content/download/2486398/opinion/Opinion_2026-0121.pdf
 ---
+Hessert v. Hessert and Wieland-Pulayya, 6D26-0121, March 20, 2026 – Thirteen citations: four accurate, four irrelevant, five imaginary. The opinion underscores generative AI’s pitfalls, prompting the Sixth DCA to order the petitioner to show cause why sanctions should not follow.
 
-Florida's child support guidelines were updated effective January 1, 2026, reflecting revisions to the income shares tables used to calculate support obligations. The changes adjust for cost-of-living increases and updated economic data on child-rearing costs.
-
-**For existing orders:** A substantial change in circumstances — including the new guidelines — may be grounds to modify your current child support order. If your order was entered several years ago, it is worth reviewing whether a modification is appropriate.
-
-**For new cases:** All support calculations in 2026 will apply the updated tables. Our office is fully up to date on the new guidelines and can provide an accurate estimate of likely support obligations in your case.
+<https://flcourts-media.flcourts.gov/content/download/2486398/opinion/Opinion_2026-0121.pdf>
